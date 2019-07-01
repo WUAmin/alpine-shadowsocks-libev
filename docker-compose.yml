@@ -1,19 +1,25 @@
 alpine-shadowsocks-libev-a:
   image: alpine-shadowsocks-libev
+  container_name: alpine-shadowsocks-libev-a
   ports:
-    - "53:53"
+    - "8448:8448"
   environment:
-    - SRV_PORT=53
+    - SRV_PORT=8448
     - METHOD=chacha20-ietf
-    - PASSWORD=ThisPas$IsStr0ng
+    - PASSWORD=wVMGoSbbMHsjv3zn
+    - DNS_ADDR=8.8.8.8
+    - DNS_ADDR_2=1.1.1.1
   restart: always
 
 alpine-shadowsocks-libev-b:
   image: alpine-shadowsocks-libev
+  container_name: alpine-shadowsocks-libev-b
   ports:
-    - "23:23"
+    - "8558:8558"
   environment:
-    - SRV_PORT=23
+    - SRV_PORT=8558
     - METHOD=aes-256-gcm
-    - PASSWORD=sehX4Ver45sHs32Q3
+    - PASSWORD=wVMGoSbbMHsjv3zn
+    - DNS_ADDR=8.8.8.8
+    - DNS_ADDR_2=1.1.1.1
   restart: always
