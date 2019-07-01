@@ -1,0 +1,19 @@
+alpine-shadowsocks-libev-a:
+  image: alpine-shadowsocks-libev
+  ports:
+    - "53:53"
+  environment:
+    - SRV_PORT=53
+    - METHOD=chacha20-ietf
+    - PASSWORD=ThisPas$IsStr0ng
+  restart: always
+
+alpine-shadowsocks-libev-b:
+  image: alpine-shadowsocks-libev
+  ports:
+    - "23:23"
+  environment:
+    - SRV_PORT=23
+    - METHOD=aes-256-gcm
+    - PASSWORD=sehX4Ver45sHs32Q3
+  restart: always
