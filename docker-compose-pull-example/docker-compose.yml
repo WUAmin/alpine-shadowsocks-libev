@@ -4,9 +4,9 @@ shadowsocks-1:
   ports:
     - "${PORT}:${SRV_PORT}"
   environment:
-    - SRV_PORT=
-    - METHOD=
-    - PASSWORD=
-    - DNS_ADDR=
-    - DNS_ADDR_2=
+    - SRV_PORT=${SRV_PORT}
+    - METHOD=${METHOD}
+    - PASSWORD=${PASSWORD}
+    - DNS_ADDR=${DNS_ADDR}
+    - DNS_ADDR_2=${DNS_ADDR_2}
   restart: always
